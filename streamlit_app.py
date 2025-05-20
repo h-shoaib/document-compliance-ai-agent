@@ -29,7 +29,7 @@ AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT = os.getenv("AZURE_DOCUMENT_INTELLIGENCE_EN
 AZURE_DOCUMENT_INTELLIGENCE_KEY = os.getenv("AZURE_DOCUMENT_INTELLIGENCE_KEY")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-
+# this is for converting the agent's output into a pdf
 def generate_pdf_report(dataframe: pd.DataFrame) -> bytes:
     pdf = FPDF(orientation='L', unit='mm', format='A4')
     pdf.set_auto_page_break(auto=True, margin=15)
@@ -122,7 +122,7 @@ def streamlit_app_main():
         st.markdown("2. Then, go to the **⚖️ Compliance Checking** Tab to enter rules and run checks.")
         st.markdown("---")
         st.markdown("### NOTE:")
-        st.markdown("When entering compliance rules, ensure document names (e.g., `customs.pdf`) are mentioned if the rule pertains to specific files.")
+        st.markdown("When entering compliance rules, ensure document names are mentioned with the file extentions (e.g., customs.pdf) at least for the first mention of them")
 
     tab1, tab2 = st.tabs(["📄 Document Processing", "⚖️ Compliance Checking"])
 
@@ -260,7 +260,7 @@ def streamlit_app_main():
 
     with tab2:
         st.header("Compliance Checking")
-        st.markdown("Enter compliance rules (one per line). The AI agent will retrieve relevant documents and check compliance for all rules, providing a consolidated report.")
+        st.markdown("Enter compliance rules (one per line). The AI agent will retrieve relevant documents and check compliance for all rules, providing a consolidated report. Remeber to use the file extentions (eg. .pdf) with the file name, at least for the first mention of the file")
 
         if 'compliance_check_results_list' not in st.session_state:
             st.session_state.compliance_check_results_list = []
