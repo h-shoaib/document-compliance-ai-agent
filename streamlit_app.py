@@ -85,6 +85,7 @@ def generate_pdf_report(dataframe: pd.DataFrame) -> bytes:
 def streamlit_app_main():
     st.set_page_config(layout="wide", page_title="Document Compliance Agent")
     st.title("📑 Document Compliance Agent")
+    st.markdown("##### Made by Syed Haroon Shoaib")
 
     azure_di_client = get_azure_di_client()
     llm, embeddings = get_llm_and_embeddings()
