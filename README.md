@@ -143,7 +143,7 @@ Remember to switch tabs to the compliance checker after processing the documents
 
 * The app currently supports English documents only.
 * Too large files are unable to be handled since the Azure OCR api has a file size limit
-* 
+* Did not have time to consider edge cases, so there might be errors
 
 **Future Improvements:**
 
