@@ -115,7 +115,7 @@ The program uses 2 LangGraph agents – the DocumentProcessingAgent and the Comp
 ## 📘 Description
 
 The Document Compliance Agent is designed to:
-- Process PDF and image documents using AI-powered OCR.
+- Process PDF and image documents to extract text.
 - Store extracted content in a vector database.
 - Check documents against user-defined compliance rules.
 - Provide a clear, consolidated compliance report in pdf or csv format.
@@ -123,6 +123,14 @@ The Document Compliance Agent is designed to:
 The application supports multiple file uploads, AI-powered processing, and an interactive Streamlit interface for compliance verification and reporting.
 
 Remember to switch tabs to the compliance checker after processing the documents.
+
+### Reasoning for various choices
+
+- Langgraph was used because it's heavily customizable and allows great control over the agent. Tool calling and binding is easily handled, states can be easily customized, and it has a constantly improving library of features.
+- pdfplumber used because some pdfs have directly embedded text so it saves the cost of an api call to Azure's OCR
+- Azure Document Intelligence was used because of it's high accuracy of extraction and generous free tier
+- ChromaDB is used because it's a lightweight vector database and easy to use, hence is perfect for this demo.
+- The separation of the two pipelines is to reduce complexity in coding, and make it easy to prepare a user friendly UI
 
 ## 🧩 Assumptions, Limitations & Future Work
 
