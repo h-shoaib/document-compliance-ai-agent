@@ -73,6 +73,8 @@ streamlit run streamlit_app.py
 
 ### Application Pipeline
 
+readme_images/pipeline_architecture_diagram.png
+
 #### Document Processing
 1. User uploads files.
 2. Text is extracted using `pdfplumber` and `Azure Document Intelligence OCR`.
