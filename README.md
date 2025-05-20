@@ -75,17 +75,20 @@ streamlit run streamlit_app.py
 
 ![Pipeline Architecture](readme_images/pipeline_architecture_diagram.png)
 
-#### Document Processing
+#### --> Document Processing
 1. User uploads files.
 2. Text is extracted using `pdfplumber` and `Azure Document Intelligence OCR`.
 3. Text is passed to **DocumentProcessingAgent** to clean and store in ChromaDB.
 
-#### Compliance Checking
+#### --> Compliance Checking
 1. User inputs compliance rules.
 2. Rules go to **ComplianceCheckAgent**, which retrieves relevant docs and checks compliance.
 3. A final report is generated and displayed.
 
 ### Agents
+
+![Agent 1 Architecture](readme_images/compliance_check_agent_diagram.png)
+![Agent 2 Architecture](readme_images/compliance_check_agent_diagram.png)
 
 The program uses 2 LangGraph agents – the DocumentProcessingAgent and the ComplianceCheckAgent.
 
