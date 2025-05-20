@@ -73,7 +73,7 @@ streamlit run streamlit_app.py
 
 ### Application Pipeline
 
-readme_images/pipeline_architecture_diagram.png
+!(readme_images/pipeline_architecture_diagram.png)
 
 #### Document Processing
 1. User uploads files.
