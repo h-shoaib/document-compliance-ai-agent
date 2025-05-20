@@ -19,7 +19,7 @@ This doesn't require setting API keys or endpoints since those are handled on my
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/document-compliance-agent.git
+git clone https://github.com/h-shoaib/document-compliance-ai-agent.git
 cd document-compliance-agent
 ```
 
