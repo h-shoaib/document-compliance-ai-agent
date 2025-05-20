@@ -418,7 +418,7 @@ def streamlit_app_main():
                     error_details = result_item.get('error_details')
                     if error_details and error_details.lower() != "none" and error_details.strip() != "":
                         st.error(f"Rule-Specific Error/Note: {error_details}")
-        elif not st.session_state.get('overall_compliance_error') and rules_input.strip() and st.session_state.button_states["🔍 Check Compliance for All Rules"]: # Check if button was pressed
+        elif not st.session_state.get('overall_compliance_error') and rules_input.strip() and st.session_state.button_states.get("🔍 Check Compliance for All Rules"): # Check if button was pressed
              st.info("Compliance check initiated, but no results were populated. The agent might have encountered an issue not caught as an overall error, or returned an empty report.")
 
 
