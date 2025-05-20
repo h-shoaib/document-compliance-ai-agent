@@ -232,7 +232,7 @@ def retrieve_docs_from_vector_db_tool(doc_names: List[str]) -> str:
 
 
 
-
+# code for the document processor agent
 def document_processor_agent(state: DocumentProcessingState):
     print(f"\n--- Entering document_processor_agent ---")
 
@@ -347,7 +347,7 @@ def DocumentProcessingAgent():
 
     
 
-# --- Compliance Checking Agent ---
+# code for the compliance checking agent
 def compliance_checking_agent(state: ComplianceCheckState):
     llm, _ = get_llm_and_embeddings()
     if not llm:
