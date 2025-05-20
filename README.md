@@ -4,16 +4,16 @@ A multi-agent AI application that takes in documents, processes them, and checks
 
 ---
 
-## 🚀 Use this link to open the app
+## 🚀 First Option: Use this link to open the app
 
 👉 **I have deployed my Streamlit app using Render:**
 
 🔗 https://document-compliance-ai-agent.onrender.com
-*(No setup required – just upload documents and start checking compliance.)*
 
+This doesn't require setting api keys or endpoints since those are handled on my Render dashboard
 ---
 
-## ⚙️ Run locally
+## ⚙️ Second Option: Run locally
 
 ### 1. Clone the Repository
 
@@ -87,19 +87,25 @@ streamlit run streamlit_app.py
 
 ### Agents
 
-![Agent 1 Architecture](readme_images/compliance_check_agent_diagram.png)
+![Agent 1 Architecture](readme_images/![Agent 1 Architecture](document_processing_agent_diagram.png)
 ![Agent 2 Architecture](readme_images/compliance_check_agent_diagram.png)
 
 The program uses 2 LangGraph agents – the DocumentProcessingAgent and the ComplianceCheckAgent.
 
-#### 1. DocumentProcessingAgent
+### 1. DocumentProcessingAgent
+
+![Agent 1 Architecture](readme_images/document_processing_agent_diagram.png)
+
 - Takes the extracted text, cleans it, and stores it.
 - **Node**: `document_processing_agent` (powered by OpenAI's GPT-4.1)
 - **Tools**:
   - `text_cleaning_tool`: Uses LLM to clean raw data.
   - `store_in_vectordb_tool`: Stores cleaned text in ChromaDB.
 
-#### 2. ComplianceCheckAgent
+### 2. ComplianceCheckAgent
+
+![Agent 2 Architecture](readme_images/compliance_check_agent_diagram.png)
+
 - Takes compliance rules, retrieves relevant docs from the DB, and prepares a report.
 - **Node**: `compliance_checking_agent` (also powered by GPT-4.1)
 - **Tools**:
@@ -114,27 +120,30 @@ The Document Compliance Agent is designed to:
 - Process PDF and image documents using AI-powered OCR.
 - Store extracted content in a vector database.
 - Check documents against user-defined compliance rules.
-- Provide a clear, consolidated compliance report.
+- Provide a clear, consolidated compliance report in pdf or csv format.
 
 The application supports multiple file uploads, AI-powered processing, and an interactive Streamlit interface for compliance verification and reporting.
+
+Remember to switch tabs to the compliance checker after processing the documents.
 
 ## 🧩 Assumptions, Limitations & Future Work
 
 **Assumptions:**
 
-* Users will upload high-quality PDFs or images with recognizable text.
-* Compliance rules follow a structured, parseable format (e.g., mention filenames or doc types explicitly).
+* Users will upload PDFs or images of reasonable size with recognizable text.
+* Compliance rules mention the exact filename with the extension (like .pdf or .png) since the extensions are used for the Regex functions
 
 **Limitations:**
 
 * The app currently supports English documents only.
-* Accuracy of document retrieval and compliance matching may vary with rule complexity.
-* Rule interpretation is best-effort and not legally exhaustive.
+* Too large files are unable to be handled since the Azure OCR api has a file size limit
+* 
 
 **Future Improvements:**
 
+* A true CAG can be implemented in the future for improved accuracy, possibly with the help of a locally hosted LLM and a custom written caching function. 
 * Add support for multi-language OCR and compliance rules.
-* Introduce feedback loop for human-in-the-loop corrections.
-* Improve UI for document browsing and rule-building.
+* Introduce human-in-the-loop corrections (for example if the agent is confused about a particular rule or about which file, it can ask for clarification
+* Improve UI (this demo uses just streamlit which while convenient has it's limitations. Maybe in the future it can be remade with a React frontend
 
 ---
