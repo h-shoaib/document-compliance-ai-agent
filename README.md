@@ -20,7 +20,7 @@ This doesn't require setting API keys or endpoints since those are handled on my
 
 ```bash
 git clone https://github.com/h-shoaib/document-compliance-ai-agent.git
-cd document-compliance-agent
+cd document-compliance-ai-agent
 ```
 
 ### 2. Create and Activate Virtual Environment
