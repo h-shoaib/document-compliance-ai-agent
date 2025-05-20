@@ -10,7 +10,8 @@ A multi-agent AI application that takes in documents, processes them, and checks
 
 🔗 https://document-compliance-ai-agent.onrender.com
 
-This doesn't require setting api keys or endpoints since those are handled on my Render dashboard
+
+**This doesn't require setting api keys or endpoints since those are handled on my Render dashboard**
 ---
 
 ## ⚙️ Second Option: Run locally
