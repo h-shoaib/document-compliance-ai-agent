@@ -10,8 +10,8 @@ A multi-agent AI application that takes in documents, processes them, and checks
 
 🔗 https://document-compliance-ai-agent.onrender.com
 
+This doesn't require setting API keys or endpoints since those are handled on my Render dashboard.
 
-**This doesn't require setting api keys or endpoints since those are handled on my Render dashboard**
 ---
 
 ## ⚙️ Second Option: Run locally
@@ -87,9 +87,6 @@ streamlit run streamlit_app.py
 3. A final report is generated and displayed.
 
 ### Agents
-
-![Agent 1 Architecture](readme_images/![Agent 1 Architecture](document_processing_agent_diagram.png)
-![Agent 2 Architecture](readme_images/compliance_check_agent_diagram.png)
 
 The program uses 2 LangGraph agents – the DocumentProcessingAgent and the ComplianceCheckAgent.
 
