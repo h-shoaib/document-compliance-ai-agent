@@ -4,17 +4,7 @@ A multi-agent AI application that takes in documents, processes them, and checks
 
 ---
 
-## 🚀 First Option: Use this link to open the app
-
-👉 **I have deployed my Streamlit app using Render:**
-
-🔗 https://document-compliance-ai-agent.onrender.com
-
-This doesn't require setting API keys or endpoints since those are handled on my Render dashboard.
-
----
-
-## ⚙️ Second Option: Run locally
+## ⚙️ Run locally
 
 ### 1. Clone the Repository
 
